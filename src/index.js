@@ -83,7 +83,7 @@ function catCard() {
 }
 
 function loadBreeds(){
-    const startOption = `<option value="...">...</option>`;
+    const startOption = `<option value="...">~~~ Please make a choice ~~~</option>`;
     refs.select.insertAdjacentHTML('afterbegin', startOption);
     fetchBreeds()
     .then((data => {
