@@ -36,7 +36,7 @@ function catCard() {
       .then(data => {
         if (idval === '...') {
           hideLoaders();
-          Notify.success('Choose one cat from the list');
+          Notify.failure('Choose one cat from the list');
           return;
         }
         const catCard = data.map(({url, breeds})=>{
