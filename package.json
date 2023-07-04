@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
-  "keywords": [],
+  "keywords": ["cat seach", "breeds search"],
   "author": "NS",
   "license": "ISC",
   "bugs": {
