@@ -63,27 +63,37 @@ function catCard() {
       });
   }
 
+  function htmlMarkup(arr){
+  const markup = arr
+  .map(({ id, name }) => {
+    return `<option value=${id}>${name}</option>`;
+  })
+  .join('');
+  refs.select.insertAdjacentHTML('beforeend', markup);
+  new SlimSelect({
+    select: '#single',
+  });
+}
+
 function loadBreeds(){
     const startOption = `<option value="...">...</option>`;
     refs.select.insertAdjacentHTML('afterbegin', startOption);
     fetchBreeds()
     .then((data => {
-    for (let id in data) {
-        const option = document.createElement('option');
-        option.value = data[id].id;
-        option.text = data[id].name;
-        // select.prepend(option); // за спаданням
-        refs.select.append(option); // за зростанням
-    }
+    // for (let id in data) {
+    //     const option = document.createElement('option');
+    //     option.value = data[id].id;
+    //     option.text = data[id].name;
+    //     // select.prepend(option); // за спаданням
+    //     refs.select.append(option); // за зростанням
+    // }
+
+    htmlMarkup(data);
     if (data){       
         hideLoaders();
         showSelect();
         Notify.success('Successfully loaded all breeds');
-    }
-      new SlimSelect({
-        select: '#single',
-      });
-    
+    }    
   }))
   .catch((err)=> {
     console.log(err);
