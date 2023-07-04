@@ -49,10 +49,15 @@ function catCard() {
             </div>`
 
             });
-        refs.catinfoel.insertAdjacentHTML('beforeend', catCard);
+            refs.catinfoel.insertAdjacentHTML('beforeend', catCard);
+        if (data.length){ 
         hideLoaders();
         showSelect();
         Notify.success('Successfully loaded one cat');
+        }
+        else{
+          Notify.failure('This cat was not found!');
+        }
       })
       .catch(err => {
         console.log(err);
@@ -89,7 +94,7 @@ function loadBreeds(){
     // }
 
     htmlMarkup(data);
-    if (data){       
+    if (data.length){       
         hideLoaders();
         showSelect();
         Notify.success('Successfully loaded all breeds');
