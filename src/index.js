@@ -40,12 +40,14 @@ function catCard() {
           return;
         }
         const catCard = data.map(({url, breeds})=>{
-            return `<div class='cat-card' id="parent">
-            <img src=${url} alt=${breeds[0].name} width="auto">            
+            return `<div class='cat-card'>
+            <img src=${url} alt=${breeds[0].name}> 
+            <div id='child'>
             <H2>${breeds[0].name}</H2>
-            <p id="child">${breeds[0].description}</p>
+            <p>${breeds[0].description}</p>
             <h4>Temperament:</h4>
-            <p id="child">${breeds[0].temperament}</p>
+            <p>${breeds[0].temperament}</p>
+            </div>
             </div>`
 
             });

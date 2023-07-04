@@ -40,8 +40,7 @@
   }
 
   .cat-card{
-  max-width: 500px;
-  width: 33.33%;
+  width: 100%;
   height: auto;
   padding: 10px;
   position: relative;
@@ -50,17 +49,24 @@
   color: darkred;
   cursor: pointer;
   transition: .2s linear;
-
+  display: flex;
   }
-#parent{
-    width:70%;
+
+
+.cat-card>*:first-child{
+  width: 30%;
+  align-self: stretch;
+
 }
 
 #child {
-    width:100%;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
+  margin-left: 18px;
+  margin-top: 0;
+  width: 45%;
+  display:block;
+  align-self: stretch;
 }
+
 
 .visible,div.section.visible, p.loader.visible, p.error.visible {
   display: block;
